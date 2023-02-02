@@ -49,7 +49,7 @@ func main() {
 			case "start":
 				if update.Message.Chat.IsPrivate() {
 					msg.ParseMode = "html"
-					msg.Text = "🌈欢迎使用订阅信息查看bot！\n\n 📖命令列表: \n/start 开始\n/get 获取订阅链接的详细信息\n/about 关于\n/version 查看版本\n\n欢迎加入<a href=\"https://t.me/paimonnodegroup\">@paimonnodegroup</a>来改善此bot!\n"
+					msg.Text = "🌈欢迎使用订阅信息查看bot！\n\n 📖命令列表: \n/start 开始\n/get 获取订阅链接的详细信息\n/about 关于\n/version 查看版本\n"
 					_, err := handler.SendMsg(bot, &msg)
 					handler.HandleError(err)
 				}
@@ -62,7 +62,7 @@ func main() {
 				}
 			case "about":
 				msg.ParseMode = "html"
-				msg.Text = fmt.Sprintf("<strong>Subinfo Bot %s</strong>\n\nSubinfo Bot是一款由Golang编写的开源轻量订阅查询Bot。体积小巧，无需任何第三方运行时，即点即用。\n\n<strong>Github:<a href=\"https://github.com/wu-mx/subinfobot\">https://github.com/wu-mx/subinfobot</a></strong>\n<strong>讨论群组:<a href=\"https://t.me/paimonnodegroup\">@paimonnodegroup</a></strong>", version)
+				msg.Text = fmt.Sprintf("<strong>Subinfo Bot %s</strong>\n\nSubinfo Bot是一款由Golang编写的开源轻量订阅查询Bot。体积小巧，无需任何第三方运行时，即点即用。", version)
 				_, err := handler.SendMsg(bot, &msg)
 				handler.HandleError(err)
 			case "get":
