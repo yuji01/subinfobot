@@ -28,17 +28,17 @@ jobs:
       #- name: Get dependencies, run test
        # run: |
         #  go test ./...
-
+#编译
       - name: Build
-        if: startsWith(github.ref, 'refs/tags/')
+      #  if: startsWith(github.ref, 'refs/tags/')
         env:
           NAME: subinfobot
           BINDIR: bin
         run: make -j releases
-
-      - name: Upload Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+#上传文件
+      - name: Upload
+        uses: actions/upload-artifact@main
+      #  if: startsWith(github.ref, 'refs/tags/')
         with:
           files: bin/*
           draft: true
