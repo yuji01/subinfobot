@@ -5,4 +5,4 @@ RUN apk add --no-cache git && \
     go get && \
     go build
 WORKDIR /subinfobot
-CMD ["./subinfobot"]
+ENTRYPOINT ["./subinfobot"]
